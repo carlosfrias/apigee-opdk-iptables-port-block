@@ -1,4 +1,4 @@
 ---
 # tasks file for apigee-opdk-iptables-port-block
 - name: Using iptables to block a port
-  shell: "iptables -A input -p tcp --destination-port {{ destination_port }} ! -s {{ local_address }} -i eth0"
+  shell: "iptables -A INPUT -p tcp --destination-port {{ destination_port }} ! -s {{ local_address }} -i eth0 -j DROP"
