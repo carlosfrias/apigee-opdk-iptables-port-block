@@ -17,7 +17,7 @@
     chain: INPUT
     protocol: tcp
     destination_port: "{{ destination_port }}"
-    source: "{{ ansible_host }}"
+    source: "{{ private_address }}"
     in_interface: eth0
     policy: DROP
     state: absent
