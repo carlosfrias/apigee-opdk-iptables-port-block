@@ -13,7 +13,7 @@
 - name: Using iptables to block a port
   become: true
   iptables:
-    action: append
+    action: insert
     chain: INPUT
     protocol: "tcp"
     destination_port: "{{ destination_port }}"
