@@ -19,4 +19,5 @@
     source: "!{{ ansible_host }}"
     in_interface: 'eth0'
     jump: DROP
+    table: raw
     state: present
