@@ -20,5 +20,4 @@
     source: "{{ ansible_host }}"
     in_interface: eth0
     policy: DROP
-    state: present
-    tcp_flags: '!'
+    state: absent
