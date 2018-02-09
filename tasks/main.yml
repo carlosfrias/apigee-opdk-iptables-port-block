@@ -12,6 +12,7 @@
 
 - name: Using iptables to block a port
   become: true
+  become_user: root
   iptables:
     chain: INPUT
     protocol: "tcp"
