@@ -2,7 +2,7 @@
 # tasks file for apigee-opdk-iptables-port-block
 - name: Using iptables to block a port
   become: true
-  shell: "iptables -A INPUT -p tcp --destination-port {{ destination_port }} ! -s `hostname` -i eth0 -j DROP"
+  shell: "sudo iptables -A INPUT -p tcp --destination-port {{ destination_port }} ! -s `hostname` -i eth0 -j DROP"
   environment:
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
