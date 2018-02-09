@@ -17,6 +17,8 @@
     chain: INPUT
     protocol: tcp
     destination_port: "{{ destination_port }}"
-    source: "{{ inventory_hostname }}"
+    source: "{{ ansible_host }}"
     in_interface: eth0
     policy: DROP
+    state: present
+    tcp_flags: '!'
