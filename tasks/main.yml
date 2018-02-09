@@ -13,11 +13,10 @@
 - name: Using iptables to block a port
   become: true
   iptables:
-    action: insert
     chain: INPUT
     protocol: "tcp"
     destination_port: "{{ destination_port }}"
-    source: "!{{ private_address }}"
-    in_interface: eth0
-    policy: DROP
+    source: "!{{ ansible_host }}"
+    in_interface: 'eth0'
+    jump: DROP
     state: present
