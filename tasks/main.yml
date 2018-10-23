@@ -4,9 +4,9 @@
 #  become: true
 #  shell: "iptables -A INPUT -p tcp --destination-port {{ destination_port }} ! -s `hostname` -i eth0 -j DROP"
 #  environment:
-#    http_proxy: "{{ http_proxy }}"
-#    https_proxy: "{{ https_proxy }}"
-#    no_proxy: "{{ no_proxy }}"
+#    http_proxy: "{{ http_proxy | default('') }}"
+#    https_proxy: "{{ https_proxy | default('') }}"
+#    no_proxy: "{{ no_proxy | default('') }}"
 #    PORT_TIMEOUT: '{{ port_timeout | default(60) }}'
 #    UP_TIMEOUT: '{{ up_timeout | default(60) }}'
 
